@@ -23,6 +23,7 @@ link_directories("/opt/ros/indigo/lib")
 link_directories("/opt/ros/jade/lib")
 link_directories("/opt/ros/kinetic/lib")
 link_directories("/opt/ros/melodic/lib")
+link_directories("/opt/ros/noetic/lib")
 
 add_library(
             v_repExtRosVelodyne

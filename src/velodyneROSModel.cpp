@@ -41,7 +41,7 @@ CVelodyneROSModel::CVelodyneROSModel(const int visionSensorHandles[4],float freq
 
     //initialize the fixed fields of the output PointCloud2 message
     //_buffer.header.frame_id="espeleo_robo/os1_sensor";
-    _buffer.header.frame_id="os1_sensor";
+    _buffer.header.frame_id="lidar";
     _buffer.height=1; //unordered data
     _buffer.fields.resize(3); //convert x/y/z to fields
     _buffer.fields[0].name = "x"; _buffer.fields[1].name = "y"; _buffer.fields[2].name = "z";
