@@ -18,7 +18,7 @@ $ cp ~/catkin_ws/devel/.private/coppeliasim_plugin_velodyne/lib/libv_repExtRosVe
 ## Node configuration 
 
 - Edit `src/ros_server_velodyne.cpp:22` to define the published topic name. Default: `/velodyne/points2`. 
-- Edit `src/velodyneROSModel.cpp:43` to define the frame ID of the published pointcloud. Default: `os1_sensor` (already updated for the EspeleoRobô TF tree, package = espeleo_description).
+- Edit `src/velodyneROSModel.cpp:43` to define the frame ID of the published pointcloud. Default: `lidar` (already updated for the EspeleoRobô TF tree, package = espeleo_description).
 
 
 ## CoppeliaSim / VREP sensor configuration

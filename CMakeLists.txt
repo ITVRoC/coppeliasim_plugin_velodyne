@@ -16,7 +16,6 @@ catkin_package(CATKIN_DEPENDS roscpp rosconsole std_msgs
 
 include_directories(include ${catkin_INCLUDE_DIRS})
 
-
 add_library(
             v_repExtRosVelodyne
             src/v_repLib.cpp
