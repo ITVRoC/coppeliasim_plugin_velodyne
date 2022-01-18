@@ -5,15 +5,19 @@
 
 class CVelodyneROSModelCont
 {
-public:
+  public:
     CVelodyneROSModelCont();
+
     virtual ~CVelodyneROSModelCont();
 
-    int addObject(CVelodyneROSModel* obj);
-    CVelodyneROSModel* getObject(int velodyneHandle);
+    int addObject(CVelodyneROSModel *obj);
+
+    CVelodyneROSModel *getObject(int velodyneHandle);
+
     bool removeObject(int velodyneHandle);
+
     void removeAll();
 
-private:
-    std::vector<CVelodyneROSModel*> _allObjects;
+  private:
+    std::vector<CVelodyneROSModel *> _allObjects;
 };
