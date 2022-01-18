@@ -15,11 +15,6 @@ After cloning this repository and compiling with `catkin make`, the plugin lib n
 $ cp ~/catkin_ws/devel/.private/coppeliasim_plugin_velodyne/lib/libv_repExtRosVelodyne.so $COPPELIASIM_ROOT_DIR
 ```
 
-## Node configuration 
-
-- Edit `src/ros_server_velodyne.cpp:22` to define the published topic name. Default: `/velodyne/points2`. 
-- Edit `src/velodyneROSModel.cpp:43` to define the frame ID of the published pointcloud. Default: `lidar` (already updated for the EspeleoRobô TF tree, package = espeleo_description).
-
 
 ## CoppeliaSim / VREP sensor configuration
 
@@ -42,10 +37,11 @@ if (sim_call_type==sim.syscb_init) then
 
 
 	-- added for local frame version
-	h_velodyne_sensor = sim.getObjectHandle('velodyneVPL_16')
+    h_velodyne_sensor = sim.getObjectHandle('velodyneVPL_16')
+    local frameId = "lidar"
+    local topic = "/velodyne"
 	
-
-    _h=simExtVelodyneROS_createVelodyneROSModel(visionSensorHandles,frequency,options,pointSize,coloring_closeAndFarDistance,displayScaling, h_velodyne_sensor)
+    _h=simExtVelodyneROS_createVelodyneROSModel(visionSensorHandles,frequency,options,pointSize,coloring_closeAndFarDistance,displayScaling, h_velodyne_sensor, frameId, topic)
 end
 
 if (sim_call_type==sim.syscb_sensing) then
