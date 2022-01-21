@@ -11,7 +11,7 @@ bool ROS_server::initialize()
 {
     int argc = 0;
     char **argv = NULL;
-    ros::init(argc, argv, "CoppeliaSim_velodyne");
+    ros::init(argc, argv, "CoppeliaSim");
     if (!ros::master::check())
         return (false);
     node = new ros::NodeHandle();
