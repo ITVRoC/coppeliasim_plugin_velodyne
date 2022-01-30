@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 2.8.3)
-project(coppeliasim_plugin_velodyne)
+cmake_minimum_required(VERSION 3.0.0)
+project(coppeliasim_plugin_velodyne VERSION 1.0.0)
 
 set (CMAKE_CXX_STANDARD 11)
 
@@ -11,18 +11,10 @@ find_package(catkin REQUIRED COMPONENTS
             message_generation
             )
 
-catkin_package(
-               CATKIN_DEPENDS roscpp rosconsole std_msgs 
+catkin_package(CATKIN_DEPENDS roscpp rosconsole std_msgs 
                DEPENDS roscpp rosconsole std_msgs )
 
 include_directories(include ${catkin_INCLUDE_DIRS})
-
-link_directories("/opt/ros/groovy/lib")
-link_directories("/opt/ros/hydro/lib")
-link_directories("/opt/ros/indigo/lib")
-link_directories("/opt/ros/jade/lib")
-link_directories("/opt/ros/kinetic/lib")
-link_directories("/opt/ros/melodic/lib")
 
 add_library(
             v_repExtRosVelodyne
@@ -45,12 +37,6 @@ add_dependencies(v_repExtRosVelodyne ${catkin_EXPORTED_TARGETS})
 target_link_libraries(v_repExtRosVelodyne
     pthread
     dl
-    #roslib
-    rosconsole
-    rostime
-    rospack
-    roscpp_serialization
-    roscpp
     boost_system
    ${catkin_LIBRARIES}
 )

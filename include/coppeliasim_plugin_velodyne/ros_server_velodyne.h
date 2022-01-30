@@ -11,14 +11,12 @@ class ROS_server
 		static void shutDown();
 
         static ros::Publisher getPublisher();
+        static ros::Publisher createPublisher(std::string);
 
 	private:
         ROS_server() {}
 		
 		static ros::NodeHandle* node;
-
-        // Publishers:
-        static ros::Publisher pointCloud_publisher;
 
 };
 
